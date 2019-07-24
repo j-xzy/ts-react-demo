@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('../config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {

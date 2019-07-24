@@ -3,10 +3,17 @@ declare namespace IModel {
    * 用户信息
    */
   interface IUser extends IBaseUser {
+    /**
+     * @faker name.findName
+     */
     name: string;
     company: string | null;
     blog: string;
     location: string | null;
+
+    /**
+     * @format email
+     */
     email: string | null;
     hireable: string | null;
     bio: string;

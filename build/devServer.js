@@ -2,8 +2,11 @@ const express = require('express');
 const config = require('./config');
 const fs = require('fs');
 const path = require('path');
-const compiler = require('webpack')(require('./webpack.dev'));
+const compiler = require('webpack')(require('./webpack/webpack.dev'));
 const app = express();
+const mock = require('./script/mock');
+
+mock();
 
 // EventSource的response
 let client;
