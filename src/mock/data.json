@@ -2,24 +2,32 @@
   "/users/{name}": {
     "get": {
       "params": {
-        "name": "enim"
+        "name": "aliquip"
       },
       "response": {
-        "company": "laborum",
-        "id": -5302567.652254716,
-        "name": "武 明"
+        "avatar_url": "nostrud commodo sit fugiat",
+        "id": 10053285.185642436,
+        "name": "朱 子骞"
       }
     }
   },
   "/users/{name}/repos": {
     "get": {
       "params": {
-        "name": "tempor"
+        "name": "dolore laborum in"
       },
       "response": [
         {
-          "id": 15954386.378215715,
-          "name": "en"
+          "id": 53548758.75415814,
+          "name": "nostrud"
+        },
+        {
+          "id": 56304165.52658358,
+          "name": "ullamco Excepteur ipsum in"
+        },
+        {
+          "id": 59374607.844209194,
+          "name": "ex ea ut laborum"
         }
       ]
     }

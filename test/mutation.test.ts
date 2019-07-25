@@ -17,7 +17,7 @@ describe('mutation', () => {
 
   it('updateUser', () => {
     expect(store.getState().user).toEqual({});
-    store.commit('updateUser', { name: 'bar', id: 3, company: 'x' });
-    expect(store.getState().user).toEqual({ name: 'bar', id: 3, company: 'x' });
+    store.commit('updateUser', { name: 'bar', id: 3, avatar_url: 'x' });
+    expect(store.getState().user).toEqual({ name: 'bar', id: 3, avatar_url: 'x' });
   });
 });

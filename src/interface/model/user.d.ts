@@ -7,7 +7,7 @@ declare namespace IModel {
      * @faker name.findName
      */
     name: string;
-    company: string | null;
+    // company: string | null;
     // blog: string;
     // location: string | null;
 
@@ -32,7 +32,7 @@ declare namespace IModel {
     id: number;
     // login: string;
     // node_id: string;
-    // avatar_url: string;
+    avatar_url: string;
     // gravatar_id: string;
     // url: string;
     // html_url: string;

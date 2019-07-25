@@ -6,8 +6,10 @@
     "build": "webpack-cli --config ./build/webpack/webpack.prod.js",
     "analyze": "webpack-cli --config ./build/webpack/webpack.analyze.js",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "jest test --config=jest.config.js",
-    "coverage": "jest test --config=jest.config.js --coverage"
+    "test": "npm run type-check && jest test --config=jest.config.js",
+    "coverage": "jest test --config=jest.config.js --coverage",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "sideEffects": [
     "*.css",
