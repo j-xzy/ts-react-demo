@@ -20,8 +20,8 @@ async function genMock() {
   const files = glob.sync(path.resolve(modelPath, '**/*.ts')).concat(
     glob.sync(path.resolve(apiPath, '**/*.ts'))
   );
-  const data = await tsFaker(files);
-  fs.writeFileSync(path.resolve(config.srcPath, 'mock/data.json'), JSON.stringify(data.IApi, null, 2));
+  const { IApi } = await tsFaker(files, { locale: 'zh_CN' });
+  fs.writeFileSync(path.resolve(config.srcPath, 'mock/data.json'), JSON.stringify(IApi, null, 2));
 }
 
 module.exports = mock;

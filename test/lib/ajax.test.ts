@@ -1,4 +1,4 @@
-import { normalizeUrl } from '../../src/lib/ajax';
+import { normalizeUrl } from '@/lib/ajax';
 
 describe('lib.ajax', () => {
 

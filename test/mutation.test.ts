@@ -1,6 +1,6 @@
+import { reducers } from '@/store/createStore';
+import { initialState } from '@/store/state';
 import { createStore } from 'type-redux';
-import { reducers } from '../src/store/createStore';
-import { initialState } from '../src/store/state';
 
 describe('mutation', () => {
   let store = createStore(initialState, reducers);
@@ -9,7 +9,15 @@ describe('mutation', () => {
     store = createStore(initialState, reducers);
   });
 
-  it('', () => {
-    expect(true).toBe(true);
+  it('updateRepos', () => {
+    expect(store.getState().repos).toEqual([]);
+    store.commit('updateRepos', [{ id: 1, name: 'bar' }]);
+    expect(store.getState().repos).toEqual([{ id: 1, name: 'bar' }]);
+  });
+
+  it('updateUser', () => {
+    expect(store.getState().user).toEqual({});
+    store.commit('updateUser', { name: 'bar', id: 3, company: 'x' });
+    expect(store.getState().user).toEqual({ name: 'bar', id: 3, company: 'x' });
   });
 });

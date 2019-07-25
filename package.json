@@ -1,5 +1,5 @@
 {
-  "name": "gitinfo",
+  "name": "ts-react-demo",
   "version": "0.0.0",
   "scripts": {
     "start": "node ./build/devServer.js",
@@ -50,7 +50,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "terser-webpack-plugin": "^1.3.0",
-    "ts-faker": "0.0.3",
+    "ts-faker": "0.0.4",
     "tslint": "^5.18.0",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.5.3",

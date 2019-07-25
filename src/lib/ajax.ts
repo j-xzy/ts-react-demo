@@ -1,5 +1,3 @@
-import mockData from '@/mock/data.json';
-
 export async function Get<T extends IGetUrl>(urlPattern: T, params: IGetParams<T>) {
   return await adFetch<IGetReponse<T>>(urlPattern, 'get', params);
 }
@@ -17,12 +15,16 @@ export async function Delete<T extends IDeleteUrl>(urlPattern: T, params: IDelet
 }
 
 export async function adFetch<T>(urlPattern: string, method: IHttpMethod, params: any): Promise<T> {
-  const url = window.config.host + normalizeUrl(urlPattern, params as any);
-  if (window.config.mock && (mockData as any)[urlPattern] && (mockData as any)[urlPattern][method] && (mockData as any)[urlPattern][method].response) {
-    return await new Promise((resolve) => {
-      resolve((mockData as any)[urlPattern][method].response);
-    });
+  if (window.config.mock) {
+    const { default: mockData }: any = await import('@/mock/data.json');
+    if (mockData[urlPattern] && mockData[urlPattern][method] && mockData[urlPattern][method].response) {
+      return await new Promise((resolve) => {
+        resolve(mockData[urlPattern][method].response);
+      });
+    }
   }
+
+  const url = window.config.host + normalizeUrl(urlPattern, params as any);
   return await fetch(url, {
     method,
     ...params

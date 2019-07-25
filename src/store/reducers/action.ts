@@ -3,9 +3,13 @@ import { ICtx } from '../createStore';
 /**
  * 得到所有信息
  */
-export async function getAllInfo(ctx: ICtx, name: string) {
-  ctx.dispatch('getUser', name);
-  ctx.dispatch('getRepos', name);
+export async function getAllInfo(ctx: ICtx, name: string): Promise<any> {
+  return Promise.all(
+    [
+      ctx.dispatch('getUser', name),
+      ctx.dispatch('getRepos', name)
+    ]
+  );
 }
 
 /**
