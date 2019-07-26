@@ -1,1 +1,1 @@
-使用 [ts-react-template](https://github.com/whj1995/ts-react-template)创建的例子
+使用 [TS-React-Starter](https://github.com/whj1995/TS-React-Starter)创建的例子
